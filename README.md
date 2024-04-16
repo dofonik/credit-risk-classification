@@ -1,30 +1,42 @@
 # credit-risk-classification
 Module 20 Challenge - UWA Data Analytics Bootcamp
 
-# Module 12 Report Template
+# Analysis Overview
 
-## Overview of the Analysis
+The "credit_risk_classification.ipynb" main code located in the "Credit_Risk" folder performs an analysis on loan data contained within the lending_data.csv file, located in "Credit_Risk/Resources".
 
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
+The purpose of the analysis is to train a machine learning model to determine the creditworthiness of borrowers using historical lending data (lending_data.csv).
+The desired outcome was to predict if a loan is healthy (0) or high risk (1). This was done by setting "loan_status" as the target variable.
 
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any other algorithm).
+The dataset contains various financial data points of borrowers (other than the target variable): loan size, interest rate, borrower income, debt-to-income ratio, number of accounts, derogatory marks, and total debt.
 
-## Results
+Logistic Regression was the algorithm used for the binary classification of the data. The machine learning process involved included data preprocessing, model training and model evaluation.
 
-Using bulleted lists, describe the accuracy scores and the precision and recall scores of all machine learning models.
+# Results
+The model demonstrated high overall accuracy.
 
-* Machine Learning Model 1:
-    * Description of Model 1 Accuracy, Precision, and Recall scores.
+For Healthy Loans (0):
+ - Precision: 1.00
+ - Recall: 1.00
+ - F1-Score: 1.00
 
-## Summary
+For High-Risk Loans (1):
+ - Precision: 0.87
+ - Recall: 0.89
+ - F1-Score: 0.88
 
-Summarise the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
+Macro Average:
+ - Precision: 0.94
+ - Recall: 0.94
+ - F1-Score: 0.94
 
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
+Weighted Average:
+ - Precision: 0.99
+ - Recall: 0.99
+ - F1-Score: 0.99
 
-If you do not recommend any of the models, please justify your reasoning.
+# Summary
+
+The model exhibited good performance in predicting and differentiating healthy loans to high risk loans. Perfect precision and recall was observed for healthy loans, with 87% precision for high-risk loans (similar recall score also observed).
+
+Considering the accuracy of the model when assessing the creditworthiness of borrowers, it is recommended that this model be used. The model has perfect precision when determining healthy loans which is the vast majority of instances in a standard data set. Loans deemed high risk by the model can be double checked seperately if required, as the size of this portion of data will be far reduced compared to the entire dataset.
